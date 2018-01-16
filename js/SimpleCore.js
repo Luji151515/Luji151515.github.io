@@ -144,7 +144,7 @@ var SimpleCore = {
             });
         } else {
             $('body').removeClass('night-mode');
-            btn.find('i').attr('class', 'fa fa-sun-o');
+            btn.find('i').attr('class', 'fa-snowflake-o');
             $(".cover-img").css({
                 'background': "url('/images/cover-day.jpg')",
                 'background-image': '/images/cover-day.jpg',
