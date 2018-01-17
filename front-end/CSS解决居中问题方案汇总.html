@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="HKY">
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://huangkaiyang.cn/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://huangkaiyang.cn">
+<meta name="author" content="黄凯阳">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>css解决居中问题方案汇总 - 黄凯阳的个人博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="在你刚入前端之初，居中这个问题有时候会带给你一些烦恼，特别是垂直居中，这篇博客将从水平居中——垂直居中——整体居中方面提供全套解决方案。">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="Home">Home</a>
+        <!-- <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a> -->
+        <a href="/archives" title="Archives"><i class="fa fa-bookmark"></i><span>Archives</span></a>
+        <a href="/tags/html/" title="Tags"><i class="fa fa-random"></i><span>Tags</span></a>
+        <!-- custom single page of menus -->
+        <!-- 
+        
+        <a href="/contact" title="联系我">
+            <i class="fa fa-rss"></i>
+            <span>联系我</span>
+        </a>
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question"></i>
+            <span>帮助</span>
+        </a>
+         -->
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa-snowflake-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">Tu me manques</h1>
+        <p class="cover-siteDesc">一个会写着写着就跑题了的人</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/Luji151515" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="active">
+                    <a href="/categories/front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/algorithm" data-name="算法">算法</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/PM" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/casual" data-name="闲谈">闲谈</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">查找</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="查找" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键字..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://huangkaiyang.cn" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="http://huangkaiyang.cn" target="_blank">黄凯阳</a>
+                    <span title="最后编辑于2018-01-17">2018-01-17</span>
+                </p>
+                <p>「敲代码的时候我可是一本正经的」</p>
+            </div>
+            <h2 class="post-title">CSS解决居中问题方案汇总</h2>
+            <div class="post-meta">
+                本文总共2472个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="CSS解决居中问题方案汇总"><a href="#CSS解决居中问题方案汇总" class="headerlink" title="CSS解决居中问题方案汇总"></a>CSS解决居中问题方案汇总</h2><blockquote>
+<p>在你刚入前端之初，居中这个问题有时候会带给你一些烦恼，特别是垂直居中，这篇博客将从水平居中——垂直居中——整体居中方面提供全套解决方案。</p>
+</blockquote>
+<p><em>注：着急看垂直居中或者整体居中可以直接往后翻</em></p>
+<h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h4><p>我们的需求是实现不定宽高的居中，初始代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot; style=&quot;background-color:aqua&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot; style=&quot;background-color: yellow&quot;&gt;</span><br><span class="line">        居中</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>结果是这样的<br><img src="http://upload-images.jianshu.io/upload_images/762103-5fbe8d00a22f405e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
+<p>很容易发现子元素占用了父元素的所有宽度。下面列出了三种水平居中的解决方案</p>
+<h5 id="1-text-align-inline-block"><a href="#1-text-align-inline-block" class="headerlink" title="1. text-align + inline-block"></a>1. text-align + inline-block</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">        .father&#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .child&#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">        &#125;</span><br><span class="line">inline-block: 收敛子元素的宽度使其宽度随内容而定，text-align, 使收敛后的子元素居中</span><br></pre></td></tr></table></figure>
+<p>优点：兼容性好，除了IE6,7之外，基本上无兼容问题。<br>缺点：text-align导致子元素内容也居中，这在某些情况下是不希望见到的。</p>
+<h5 id="2-table-margin"><a href="#2-table-margin" class="headerlink" title="2. table + margin"></a>2. table + margin</h5><p>table: 表面上像block，其实他的宽度是跟着内容走的于是乎我们可以这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;&#125;</span><br><span class="line">.child&#123;</span><br><span class="line">    display: table;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果是这样的<br><img src="http://upload-images.jianshu.io/upload_images/762103-792118e0636c37f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"><br>优点：只作用父元素，兼容IE8及以上</p>
+<h5 id="3-relative-absolute"><a href="#3-relative-absolute" class="headerlink" title="3. relative + absolute"></a>3. relative + absolute</h5><p>这个不多说，相信大家平时用的也比较多<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.child&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left:50%;</span><br><span class="line">    transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是父元素相对定位后，其高度塌陷为0导致背景颜色无法显示，但居中目的确实是达到了。<br><img src="http://upload-images.jianshu.io/upload_images/762103-30356a903dbb1c61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"></p>
+<h5 id="4-flex-justify"><a href="#4-flex-justify" class="headerlink" title="4. flex + justify"></a>4. flex + justify</h5><p>Flex:牵涉到弹性盒子布局，如果对此不了解，很乐意当一个传送门<br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a><br>假定你已经了解了Flex或者看完了上述介绍，那我就直奔主题直接给出代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">.child&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：简单<br>缺点：兼容性，甚至在某些较新的非IE浏览器还依据需要加上厂商前缀</p>
+<hr>
+<h4 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h4><p>相信你对vertical-align不陌生，听说可以使元素垂直居中，但为啥每次使用都没效果，在这说明一下，vertical-align只对inline, inline-block, table等级别元素有效，注意这里不包括block。好了，直奔主题。</p>
+<h5 id="1-table-cell-vertical"><a href="#1-table-cell-vertical" class="headerlink" title="1. table-cell + vertical"></a>1. table-cell + vertical</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">    display: table-cell;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>细心的你可能发现了子元素的宽度等同于父元素<br><img src="http://upload-images.jianshu.io/upload_images/762103-260e229887b26b73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.png"><br>优点： 简单，只作用于父元素<br>缺点： 除了很低版本的IE外，好像还真没啥</p>
+<h5 id="2-absolute-transform"><a href="#2-absolute-transform" class="headerlink" title="2. absolute + transform"></a>2. absolute + transform</h5><p>原理很简单，直接给出代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.child&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top:50%;</span><br><span class="line">    transform: translateY(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/762103-14f3ba10d0d54428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6.png"></p>
+<p>这个刚好子元素的宽度为其内容宽度。<br>缺点：兼容问题 详查<a href="https://caniuse.com/">Can I use?</a></p>
+<h5 id="3-flex-align-items"><a href="#3-flex-align-items" class="headerlink" title="3. flex + align-items"></a>3. flex + align-items</h5><p>不多说，你都看到这里,这就不是问题了，什么你真是跳着看的，好吧，再次勉为其难的送上一道传送门。<br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flex</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>效果如上<br>缺点：兼容问题  详查<a href="https://caniuse.com/">Can I use?</a></p>
+<hr>
+<h4 id="整体居中"><a href="#整体居中" class="headerlink" title="整体居中"></a>整体居中</h4><h5 id="1-inline-block-text-align-table-cell-vertical"><a href="#1-inline-block-text-align-table-cell-vertical" class="headerlink" title="1. inline-block + text-align + table-cell + vertical"></a>1. inline-block + text-align + table-cell + vertical</h5><p>思路很简单，先实现水平居中再实现垂直居中，你要反过来也可以。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">    display: table-cell;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.child&#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-absolute-transform-1"><a href="#2-absolute-transform-1" class="headerlink" title="2. absolute + transform"></a>2. absolute + transform</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.child&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top:50%;</span><br><span class="line">    left:50%;</span><br><span class="line">    transform: translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/762103-fac145663ec76546.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7.png"></p>
+<h5 id="3-flex-justify-align-items"><a href="#3-flex-justify-align-items" class="headerlink" title="3. flex + justify + align-items"></a>3. flex + justify + align-items</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/css/">css</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>转载请注明出处  &lt;本文内容仅作为作者个人兴趣与观点，若有不恰当之处，望不吝赐教&gt;</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>Copyright © 2018 黄凯阳. All Rights Reserved</p>  
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '01/15/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            wxMpImg: '/images/weixin-mp.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>
