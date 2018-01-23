@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="HKY">
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://huangkaiyang.cn/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta name="baidu-site-verification" content="BsoQ8NozyP" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://huangkaiyang.cn">
+<meta name="author" content="黄凯阳">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>基于javascript的对象继承 - 黄凯阳的个人博客</title>
+
+<meta name="keywords" content="Object Prototype extern">
+
+<meta name="description " content="谈到继承，javascript在ES6出现之前，是不提供原生的继承机制的，这里我们将通过几种方法，来实现功能上的继承。">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="Home">Home</a>
+        <!-- <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a> -->
+        <a href="/archives" title="Archives"><i class="fa fa-bookmark"></i><span>Archives</span></a>
+        <a href="/tags/html/" title="Tags"><i class="fa fa-random"></i><span>Tags</span></a>
+        <!-- custom single page of menus -->
+        <!-- 
+        
+        <a href="/contact" title="联系我">
+            <i class="fa fa-rss"></i>
+            <span>联系我</span>
+        </a>
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question"></i>
+            <span>帮助</span>
+        </a>
+         -->
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa-snowflake-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">Tu me manques</h1>
+        <p class="cover-siteDesc">一个会写着写着就跑题了的人</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/Luji151515" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="active">
+                    <a href="/categories/front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/algorithm" data-name="算法">算法</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/PM" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/casual" data-name="闲谈">闲谈</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">查找</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="查找" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键字..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://huangkaiyang.cn" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="http://huangkaiyang.cn" target="_blank">黄凯阳</a>
+                    <span title="最后编辑于2018-01-23">2018-01-23</span>
+                </p>
+                <p>「敲代码的时候我可是一本正经的」</p>
+            </div>
+            <h2 class="post-title">基于javascript的对象继承</h2>
+            <div class="post-meta">
+                本文总共3971个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <blockquote>
+<p>谈到继承，javascript在ES6出现之前，是不提供原生的继承机制的，这里我们将通过几种方法，来实现功能上的继承。</p>
+<h2 id="1-基于原型链的继承"><a href="#1-基于原型链的继承" class="headerlink" title="1.基于原型链的继承"></a>1.基于原型链的继承</h2></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function SuperType()&#123;</span><br><span class="line">    this.colors=[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.getSuperValue = function()&#123;</span><br><span class="line">    return this.property;</span><br><span class="line">&#125;</span><br><span class="line">function SubType()&#123;</span><br><span class="line">&#125;</span><br><span class="line">SubType.prototype = new SuperType();</span><br><span class="line">SubType.prototype.getSuperValue = function()&#123;</span><br><span class="line">    return this.subproperty;</span><br><span class="line">&#125;</span><br><span class="line">SubType.prototype.getSuperValue = function()&#123;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line">var instance1 = new SubType();</span><br><span class="line">instance1.colors.push(&quot;black&quot;);</span><br><span class="line">var instance2 = new SubType();</span><br><span class="line">console.info(instance2.colors)</span><br><span class="line"></span><br><span class="line">result:  [ &apos;red&apos;, &apos;blue&apos;, &apos;green&apos;, &apos;black&apos; ]</span><br><span class="line">console.info(instance1.hasOwnProperty(&quot;colors&quot;), &quot;colors&quot; in instance1)</span><br><span class="line">result: false true           //说明colors这个属性不是子类的实例属性，而是原型属性</span><br></pre></td></tr></table></figure>
+<p><strong>着重看第9行，子类的原型指向父类的实例，同样也就继承了父类实例后的所有属性，追着父类实例的原型链走，同样也继承到了父类的方法。</strong></p>
+<p>缺点：虽然得到了父类的属性和方法，但是都是在原型上的，当某一个实例对其属性进行更改时，会直接反应到原型上，如果这时实例化另外一个实例的话，就将接受这种更改，这往往是不能接受的，这在倒数。</p>
+<hr>
+<h2 id="2-借用构造函数来实现继承"><a href="#2-借用构造函数来实现继承" class="headerlink" title="2.借用构造函数来实现继承"></a>2.借用构造函数来实现继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function SuperType()&#123;</span><br><span class="line">    this.colors=[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]</span><br><span class="line">&#125;</span><br><span class="line">function SubType()&#123;</span><br><span class="line">   SuperType.call(this);</span><br><span class="line">&#125;</span><br><span class="line">var instance1 = new SubType();</span><br><span class="line">instance1.colors.push(&quot;black&quot;);</span><br><span class="line">console.info(instance1.colors)  //red, blue, green, black</span><br><span class="line"></span><br><span class="line">var instance2 = new SubType();</span><br><span class="line">console.info(instance2.colors)  //red, blue, green</span><br><span class="line"></span><br><span class="line">console.info(instance1.hasOwnProperty(&quot;colors&quot;), &quot;colors&quot; in instance1)</span><br><span class="line">result: true true</span><br></pre></td></tr></table></figure>
+<p><strong>着重看第五行，用了构造函数的call方法， call方法作用在与改变函数执行的作用域，第五行传入的this.也就是子类运行时的作用域，我们把子类作用域传入父类作用域，导致父类定义的那些属性会直接挂载到子类的作用域里，这个时候我们对子类进行实例化后得到的属性为实例属性。这个时候对各种对属性进行操作就不会影响到其他实例了。</strong></p>
+<p>缺点：如果方法也按照借用构造函数进行继承的话，那么方法他在每一个实例都会有一个拷贝，显然如果每个实例方法都是一样的话，会造成大量资源的浪费。</p>
+<hr>
+<h2 id="3-组合继承"><a href="#3-组合继承" class="headerlink" title="3.组合继承"></a>3.组合继承</h2><p>组合继承： 我们把想要继承的属性通过借用构造函数的方法，把方法通过原型链进行继承。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function SuperType(name)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.colors=[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.sayName = function()&#123;</span><br><span class="line">    console.info(this.name);</span><br><span class="line">&#125;</span><br><span class="line">//借用构造函数完成属性的继承</span><br><span class="line">function SubType(name, age)&#123;</span><br><span class="line">    SuperType.call(this, name); //添加公共属性</span><br><span class="line">    this.age = age;  //添加自有属性</span><br><span class="line">&#125;</span><br><span class="line">//借用原型链实现方法的继承</span><br><span class="line">SubType.prototype = new SuperType();</span><br><span class="line">SubType.prototype.constructor = SubType;</span><br><span class="line">SubType.prototype.sayAge = function()&#123;</span><br><span class="line">    console.info(this.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var instance1 = new SubType(&quot;Nicholas&quot;, 29);</span><br><span class="line">instance1.colors.push(&quot;black&quot;);</span><br><span class="line">console.info(instance1.colors)  //red, blue, green, black</span><br><span class="line">instance1.sayName();  //&quot;Nicholas&quot;</span><br><span class="line">instance1.sayAge()    //29</span><br><span class="line">var instance2 = new SubType(&quot;Greg&quot;, 27);</span><br><span class="line">console.info(instance2.colors) //red, blue, green</span><br><span class="line">instance2.sayName()  //&quot;Greg&quot;</span><br><span class="line">instance2.sayAge()   //27</span><br></pre></td></tr></table></figure></p>
+<p><strong>但是细心的你会发现我们在借用原型链实现方法的继承时，不仅把父类的方法挂载到原型上，父类的属性也挂载到了原型上，但是我们也借用构造函数实现实例属性的继承，而原则上是不需要挂载属性的，这就造成了原型上属性的冗余。</strong></p>
+<p>那么如何规避这种冗余呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">function SuperType(name)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.colors=[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.sayName = function()&#123;</span><br><span class="line">    console.info(this.name);</span><br><span class="line">&#125;</span><br><span class="line">//借用构造函数完成属性的继承</span><br><span class="line">function SubType(name, age)&#123;</span><br><span class="line">    SuperType.call(this, name); //添加公共属性</span><br><span class="line">    this.age = age;  //添加自有属性</span><br><span class="line">&#125;</span><br><span class="line">//借用原型链实现方法的继承</span><br><span class="line">function F()&#123;&#125;</span><br><span class="line">//这样就只继承到了父类原型上的方法。</span><br><span class="line">F.prototype = SuperType.prototype;</span><br><span class="line">SubType.prototype = new F();</span><br><span class="line"></span><br><span class="line">// SubType.prototype = new SuperType();</span><br><span class="line">SubType.prototype.constructor = SubType;</span><br><span class="line">SubType.prototype.sayAge = function()&#123;</span><br><span class="line">    console.info(this.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var instance1 = new SubType(&quot;Nicholas&quot;, 29);</span><br><span class="line">instance1.colors.push(&quot;black&quot;);</span><br><span class="line">console.info(instance1.colors)  //red, blue, green, black</span><br><span class="line">instance1.sayName();  //&quot;Nicholas&quot;</span><br><span class="line">instance1.sayAge()    //29</span><br><span class="line">var instance2 = new SubType(&quot;Greg&quot;, 27);</span><br><span class="line">console.info(instance2.colors) //red, blue, green</span><br><span class="line">instance2.sayName()  //&quot;Greg&quot;</span><br><span class="line">instance2.sayAge()   //27</span><br></pre></td></tr></table></figure></p>
+<p>这是javascript实现继承的终极方法，很多流行的前端框架内部继承的实现也是基于这一方法的。</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/javascript/">javascript</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>转载请注明出处  &lt;本文内容仅作为作者个人兴趣与观点，若有不恰当之处，望不吝赐教&gt;</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>Copyright © 2018 黄凯阳. All Rights Reserved</p>  
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '01/15/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            wxMpImg: '/images/weixin-mp.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>
